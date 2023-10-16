@@ -10,8 +10,14 @@ datasource db {
   url      = env("DATABASE_URL") //le decimos que esta la variable database_url en el archivo .env
 }
 
-model Score{
-  id Int @id @default(autoincrement())
-  user String?
-  createdAt DateTime @default(now())
+model JigsawScore{
+  id Int @id @default(autoincrement()) //crea un id por su cuenta
+  user String?  @default("unknown")
+  userId Int @default(0)
+  score Int @default(0) //por defecto sera 0
+  secondsPlayed Int  @default(0) //tiempo que estubo jugando la partida
+  movementsNumber Int @default(0) //numero de movimientos que realizo en la partida
+  createdAt DateTime @default(now()) //toma la fecha automaticamente
 }
+
+
