@@ -1,6 +1,0 @@
--- CreateTable
-CREATE TABLE "JigsawScore" (
-    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    "user" TEXT,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
-);

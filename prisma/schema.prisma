@@ -9,7 +9,21 @@ datasource db {
   provider = "sqlite" //que tipo de db vamos a usar
   url      = env("DATABASE_URL") //le decimos que esta la variable database_url en el archivo .env
 }
+//@updatedAt 
 
+model User{
+  id Int @id @default(autoincrement()) @unique//crea un id de usuario
+  nickName String
+  email String @default("unknown")
+  points Int @default(0)
+  timePlayed Int @default(0)
+  createdAt DateTime @default(now())
+  acountStatus String @default("active")
+  chatStatus String @default("active")
+  userStatus String @default("online")
+  jigsawScores JigsawScore[] //no entiendo como esto se relaciona con jigsawScore
+  // password String
+}
 model JigsawScore{
   id Int @id @default(autoincrement()) //crea un id por su cuenta
   user String?  @default("unknown")
@@ -18,6 +32,8 @@ model JigsawScore{
   secondsPlayed Int  @default(0) //tiempo que estubo jugando la partida
   movementsNumber Int @default(0) //numero de movimientos que realizo en la partida
   createdAt DateTime @default(now()) //toma la fecha automaticamente
+  authorId Int  //este campo se va a relacionar con User
+  autor User @relation(fields: [authorId],references: [id]) //luego en dev.db no va a salir User pero si autorId
 }
 
 
