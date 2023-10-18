@@ -20,8 +20,8 @@ model User{
   createdAt DateTime @default(now())
   acountStatus String @default("active")
   chatStatus String @default("active")
-  userStatus String @default("online")
-  jigsawScores JigsawScore[] //no entiendo como esto se relaciona con jigsawScore
+  userStatus String @default("online")  
+  jigsawScores JigsawScore[] //establecemos que un usuario puede tenes varios jisawScores
   // password String
 }
 model JigsawScore{
@@ -33,7 +33,7 @@ model JigsawScore{
   movementsNumber Int @default(0) //numero de movimientos que realizo en la partida
   createdAt DateTime @default(now()) //toma la fecha automaticamente
   authorId Int  //este campo se va a relacionar con User
-  autor User @relation(fields: [authorId],references: [id]) //luego en dev.db no va a salir User pero si autorId
+  autor User @relation(fields: [authorId],references: [id]) //luego en dev.db no va a salir User pero si autorId, esto establece una relacion con el modelo  User
 }
 
 
