@@ -12,7 +12,7 @@ export async function POST(request){ //post para crear informacion, request la i
             score,
             secondsPlayed,
             movementsNumber,
-            authorId:{push:newScore.id}
+            // authorId:{push:newScore.id}
         }
     })
     return NextResponse.json(newScore)//la api nos va a responder con esto
