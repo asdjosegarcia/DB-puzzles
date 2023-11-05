@@ -26,6 +26,7 @@ model User{
 }
 model JigsawScore{
   id Int @id @default(autoincrement()) //crea un id por su cuenta
+  map Int @default(0)
   user String?  @default("unknown")
   userId Int @default(0)
   score Int @default(0) //por defecto sera 0
