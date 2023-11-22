@@ -9,11 +9,11 @@ export async function POST(request){ //post para crear informacion, request la i
         data:{
             nickName,
             email,
-            jigsawScores:{
+/*             jigsawScores:{
                 create:[
                     {score:221}
                 ]
-            }
+            } */
 
         }
     })

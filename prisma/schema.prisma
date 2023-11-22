@@ -6,8 +6,13 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite" //que tipo de db vamos a usar
-  url      = env("DATABASE_URL") //le decimos que esta la variable database_url en el archivo .env
+
+  provider = "postgresql"
+
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+
 }
 //@updatedAt 
 
