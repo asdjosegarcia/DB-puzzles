@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "postinstall": "prisma generate"
@@ -17,8 +17,6 @@
     "vercel": "^32.5.0"
   },
   "devDependencies": {
-    "eslint": "^8",
-    "eslint-config-next": "13.5.4",
-    "prisma": "^5.4.2"
+    "prisma": "^5.6.0"
   }
 }

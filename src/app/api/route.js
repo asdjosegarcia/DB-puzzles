@@ -1,5 +1,5 @@
-import { NextResponse } from "next/server";
+// import { NextResponse } from "next/server";
 
-export function GET(){
-    return NextResponse.json("inicio de la api")
-}
+// export function GET(){
+//     return NextResponse.json("inicio de la api")
+// }
