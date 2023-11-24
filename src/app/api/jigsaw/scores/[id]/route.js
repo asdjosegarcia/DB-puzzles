@@ -11,7 +11,7 @@ export async function GET(request, { params }) { //aqui tenemos request aunque n
             id: Number(params.id)//buca lo que concida con esto
         }
     })
-    // console.log(jigsawScore)
+    console.log(jigsawScore)
     return NextResponse.json(jigsawScore) //lo que mandaamos como respues
 }
 

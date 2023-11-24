@@ -9,26 +9,26 @@ datasource db {
 
   provider = "postgresql"
 
-  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  url = env("POSTGRES_URL") // uses connection pooling
 
-  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  // directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 
 }
 //@updatedAt 
 
-model User{
-  id Int @id @default(autoincrement()) @unique//crea un id de usuario
-  nickName String
-  email String @default("unknown")
-  points Int @default(0)
-  timePlayed Int @default(0)
-  createdAt DateTime @default(now())
-  acountStatus String @default("active")
-  chatStatus String @default("active")
-  userStatus String @default("online")  
-  // jigsawScores JigsawScore[] //establecemos que un usuario puede tenes varios jisawScores
-  // password String
-}
+// model User{
+//   id Int @id @default(autoincrement()) @unique//crea un id de usuario
+//   nickName String
+//   email String @default("unknown")
+//   points Int @default(0)
+//   timePlayed Int @default(0)
+//   createdAt DateTime @default(now())
+//   acountStatus String @default("active")
+//   chatStatus String @default("active")
+//   userStatus String @default("online")  
+//   // jigsawScores JigsawScore[] //establecemos que un usuario puede tenes varios jisawScores
+//   // password String
+// }
 model JigsawScore{
   id Int @id @default(autoincrement()) //crea un id por su cuenta
   map Int @default(0)
