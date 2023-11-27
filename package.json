@@ -8,13 +8,13 @@
     "start": "next start",
     "lint": "next lint",
     "postinstall": "prisma generate",
-    "notas":"post install se ejecuta luego del instalar todos los paquetes npm al menos en vercel"
+    "notas": "post install se ejecuta luego del instalar todos los paquetes npm al menos en vercel"
   },
   "files": [
-    "!prisma/migrations"  
+    "!prisma/migrations"
   ],
   "dependencies": {
-    "@prisma/client": "^5.4.2",
+    "@prisma/client": "^5.6.0",
     "next": "^13.5.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
