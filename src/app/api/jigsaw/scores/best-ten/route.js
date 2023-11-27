@@ -4,17 +4,12 @@ import { prisma } from "@/libs/prisma"
 export const dynamic = "force-dynamic";
 
 export async function GET(){
-    const jigsawScoresTen=await prisma.JigsawScore.findMany({
+    const jigsawScoresTen=await prisma.jigsawScore.findMany({
         take: 10, // limitamos los resultados a 10
         orderBy: {
           score: "desc", // Ordena por puntuación de manera descendente
         },
     })
     console.log(jigsawScoresTen)
-    return NextResponse.json(jigsawScoresTen,{
-        headers: {
-          'Cache-Control': 'no-store, max-age=0',
-        },
-        revalidate: 1, // desactiva el caché
-      })
+    return NextResponse.json(jigsawScoresTen)
 }
