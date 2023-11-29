@@ -37,6 +37,7 @@ model JigsawScore{
   score Int @default(0) //por defecto sera 0
   secondsPlayed Int  @default(0) //tiempo que estubo jugando la partida
   movementsNumber Int @default(0) //numero de movimientos que realizo en la partida
+  mapWin Boolean @default(false)
   createdAt DateTime @default(now()) //toma la fecha automaticamente
   // authorId Int  //este campo se va a relacionar con User
   // autor User @relation(fields: [authorId],references: [id]) //luego en dev.db no va a salir User pero si autorId, esto establece una relacion con el modelo  User
