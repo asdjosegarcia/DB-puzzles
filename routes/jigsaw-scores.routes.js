@@ -1,14 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const mysql = require('mysql2');
-
-// Configura la conexión a MySQL
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'admin',
-  password: 'Admin#1234',
-  database: 'puzzles_db'
-});
+const db = require('./db');
 
 // Obtener todos los registros
 router.get('/', (req, res) => {
