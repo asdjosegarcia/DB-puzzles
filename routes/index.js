@@ -2,9 +2,11 @@ const express = require('express');
 const router = express.Router();
 
 // Importar las rutas
-const registrosRoutes = require('./registros');
+const jigsawScoresRoutes = require('./jigsaw-scores.routes');
+
 
 // Usar las rutas
-router.use('/registros', registrosRoutes);
+router.use('/jigsaw-scores', jigsawScoresRoutes);
+
 
 module.exports = router;

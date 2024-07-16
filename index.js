@@ -6,7 +6,7 @@ const port = 3000;
 app.use(express.json());
 
 // Importar las rutas
-const routes = require('./routes');
+const routes = require('./routes'); //we indicates routes directory
 
 // Usar las rutas
 app.use('/', routes);
