@@ -60,10 +60,9 @@ router.post('/', (req, res) => { // create new score, req data sended by client
 
 //edit scoreName
 router.put('/:id', (req, res) => { // obtains id from endpoint
-  const { id } = req.params; // Obtiene el ID del puntaje a actualizar
-  const { user  } = req.body; // req.body pase json and  disassemble data on, map,user,userid   
+  const { id } = req.params; // obtains endpoint id to update
+  const { user  } = req.body; // req.body pase json and  disassemble user
 
-  // Verifica que los campos obligatorios no estén vacíos
   if (!user) {//if user has no content.
     return res.status(400).send('El campo "user" es obligatorio'); 
   }
@@ -88,6 +87,8 @@ router.put('/:id', (req, res) => { // obtains id from endpoint
     res.status(201).send(`Registro actualizado con ID: ${id}`);
   });
 });
+
+
 
 
 
