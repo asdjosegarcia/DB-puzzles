@@ -58,7 +58,7 @@ router.post('/', (req, res) => { // create new score, req data sended by client
 });
 
 
-//edit scoreName
+//edit score
 router.put('/:id', (req, res) => { // obtains id from endpoint
   const { id } = req.params; // obtains endpoint id to update
   const { user  } = req.body; // req.body pase json and  disassemble user
@@ -67,7 +67,7 @@ router.put('/:id', (req, res) => { // obtains id from endpoint
     return res.status(400).send('El campo "user" es obligatorio'); 
   }
 
-  const editedScore = {//obect to insert on database.
+  const editedScore = {//obect to edit on database.
     user,
   };
 
@@ -85,6 +85,27 @@ router.put('/:id', (req, res) => { // obtains id from endpoint
       return res.status(500).send('Error en el servidor');
     }
     res.status(201).send(`Registro actualizado con ID: ${id}`);
+  });
+});
+
+
+
+//delete score
+router.delete('/:id', (req, res) => { // obtains id from endpoint
+  const { id } = req.params; // obtains endpoint id to update
+
+  const sql=` DELETE FROM JigsawScore WHERE  score_id=?; `//database SQL to insert
+
+  const values = [
+    id //id from query parameter
+  ];
+
+  db.query(sql, values, (err, result) => { //db.query library to execute SQL code in DB, sql variable alocate new SQL code, 
+    if (err) {
+      console.error('Error ejecutando la consulta:', err); 
+      return res.status(500).send('Error en el servidor');
+    }
+    res.status(201).send(`Registro eliminado con ID: ${id}`);
   });
 });
 

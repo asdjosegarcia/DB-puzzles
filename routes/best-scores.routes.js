@@ -10,7 +10,7 @@ router.get('/', (req, res) => { //obtains all  scores
         res.status(500).send('Error en el servidor');
         return;
       }
-      console.log('Resultados:', results);
+    //   console.log('results:', results);
       res.json(results);
     });
   });
