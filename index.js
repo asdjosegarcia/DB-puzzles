@@ -1,7 +1,7 @@
 require('dotenv').config(); //to use .env variables
 const express = require('express');
 const app = express();
-const port = process.env.PORT;
+const port = 3000;
 
 // Middleware para parsear JSON
 app.use(express.json());
@@ -14,10 +14,10 @@ app.use('/', routes);
 
 // Ruta de prueba
 app.get('/', (req, res) => {
-  res.send('¡Hola, mundo!');
+  res.send('¡Hello, word!');
 });
 
 // Inicia el servidor
 app.listen(port, () => {
-  console.log(`Servidor corriendo en http://localhost:${port}`);
+  console.log(`Server is running on port ${port}`);
 });
