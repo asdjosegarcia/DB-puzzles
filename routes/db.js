@@ -1,10 +1,11 @@
+require('dotenv').config(); //to use .env variables
 const mysql = require('mysql2'); // to conect nodejs with mysql
 
 const db = mysql.createConnection({//create new conection
-  host: 'localhost',
-  user: 'admin',
-  password: 'Admin#1234',
-  database: 'puzzles_db'
+  host: process.env.DB_HOST, //call to eviroment vars
+  user: process.env.DB_USER,
+  password:  process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 });
 
 db.connect(err => {
