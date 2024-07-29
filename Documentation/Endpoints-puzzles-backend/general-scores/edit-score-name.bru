@@ -1,0 +1,17 @@
+meta {
+  name: edit-score-name
+  type: http
+  seq: 1
+}
+
+put {
+  url: http://localhost:3000/jigsaw-scores/3
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "user":"user3.1"
+  }
+}

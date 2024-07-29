@@ -9,7 +9,7 @@ const bestScores = require('./best-scores.routes');
 
 // Usar las rutas
 router.use('/jigsaw-scores', jigsawScoresRoutes);
-router.use('/best-scores', bestScores);
+router.use('/jigsaw-scores/best-scores', bestScores);
 
 
 

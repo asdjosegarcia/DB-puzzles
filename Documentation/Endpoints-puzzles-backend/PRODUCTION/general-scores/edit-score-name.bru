@@ -1,0 +1,21 @@
+meta {
+  name: edit-score-name
+  type: http
+  seq: 1
+}
+
+put {
+  url: https://puzzles-backend-eight.vercel.app//jigsaw-scores/3
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "user":"user3.1"
+  }
+}
+
+docs {
+  This reques updates score username based on its id
+}

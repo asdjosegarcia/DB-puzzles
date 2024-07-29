@@ -1,0 +1,21 @@
+meta {
+  name: add-score
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3000/jigsaw-scores
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "user":"user8",
+    "score":"24260",
+    "secondsPlayed":"3560",
+    "movementNumber":"56",
+    "mapWin":true
+  }
+}
