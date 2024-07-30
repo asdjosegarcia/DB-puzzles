@@ -7,7 +7,7 @@ router.get('/', (req, res) => { //obtains all  scores
   db.query('SELECT * FROM JigsawScore', (err, results) => {
     if (err) {
       console.error('Error ejecutando la consulta:', err);
-      res.status(500).send('Error en el servidor');
+      res.status(500).json('Error en el servidor');
       return;
     }
     res.json(results);
@@ -20,7 +20,7 @@ router.post('/', (req, res) => { // create new score, req data sended by client
 
   // Verifica que los campos obligatorios no estén vacíos
   if (!user) {//if user has no content.
-    return res.status(400).send('El campo "user" es obligatorio'); 
+    return res.status(400).json('El campo "user" es obligatorio'); 
   }
 
   const newScore = {//obect to insert on database.
@@ -53,7 +53,7 @@ router.post('/', (req, res) => { // create new score, req data sended by client
       console.error('Error ejecutando la consulta:', err); 
       return res.status(500).send('Error en el servidor');
     }
-    res.status(201).send(`Registro creado con ID: ${result.insertId}`);
+    res.status(201).json(`Registro creado con ID: ${result.insertId}`);
   });
 });
 
@@ -64,7 +64,7 @@ router.put('/:id', (req, res) => { // obtains id from endpoint
   const { user  } = req.body; // req.body pase json and  disassemble user
 
   if (!user) {//if user has no content.
-    return res.status(400).send('El campo "user" es obligatorio'); 
+    return res.status(400).json('El campo "user" es obligatorio'); 
   }
 
   const editedScore = {//obect to edit on database.
@@ -84,7 +84,7 @@ router.put('/:id', (req, res) => { // obtains id from endpoint
       console.error('Error ejecutando la consulta:', err); 
       return res.status(500).send('Error en el servidor');
     }
-    res.status(201).send(`Registro actualizado con ID: ${id}`);
+    res.status(201).json(`Registro actualizado con ID: ${id}`);
   });
 });
 
@@ -105,7 +105,7 @@ router.delete('/:id', (req, res) => { // obtains id from endpoint
       console.error('Error ejecutando la consulta:', err); 
       return res.status(500).send('Error en el servidor');
     }
-    res.status(201).send(`Registro eliminado con ID: ${id}`);
+    res.status(201).json(`Registro eliminado con ID: ${id}`);
   });
 });
 
