@@ -1,0 +1,23 @@
+meta {
+  name: add-score
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://puzzles-backend-eight.vercel.app/jigsaw-scores
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+  "map": 1,
+  "mapWin": true,
+  "movementsNumber": 51,
+  "score": 759.51,
+  "secondsPlayed": 1980.67,
+  "user": "Unknown",
+  "userId": 0
+  }
+}
