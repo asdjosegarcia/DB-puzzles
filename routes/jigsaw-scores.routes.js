@@ -53,7 +53,7 @@ router.post('/', (req, res) => { // create new score, req data sended by client
       console.error('Error ejecutando la consulta:', err); 
       return res.status(500).send('Error en el servidor');
     }
-    res.status(201).json(`Registro creado con ID: ${result.insertId}`);
+    res.status(200).json({id:result.insertId} /* ${} */);
   });
 });
 
