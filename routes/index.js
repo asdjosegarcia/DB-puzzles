@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors'); // Importa el paquete cors
 const router = express.Router();
 
 // Importar las rutas
